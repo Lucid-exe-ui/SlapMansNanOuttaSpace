@@ -34,9 +34,10 @@
         // Try to play with audio if browser allows
         video.muted = false;
         video.play().catch(() => {
-            video.muted = true;
+            video.muted = false;
             video.play();
         });
     </script>
 </body>
 </html>
+

@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autoplay Video</title>
+    <style>
+        /* Make body fill the screen and have black background */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* horizontal center */
+            align-items: center;     /* vertical center */
+            background-color: black;
+        }
+
+        /* Optional: make video responsive */
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <video id="myVideo" width="640" height="360" controls autoplay muted>
+    <video id="myVideo" controls autoplay muted>
         <source src="video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -17,7 +34,6 @@
         // Try to play with audio if browser allows
         video.muted = false;
         video.play().catch(() => {
-            // If blocked, fallback to muted autoplay
             video.muted = true;
             video.play();
         });

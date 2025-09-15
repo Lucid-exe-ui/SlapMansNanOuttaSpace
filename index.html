@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoplay Video</title>
-    <style>
-        /* Make body fill the screen and have black background */
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center; /* horizontal center */
-            align-items: center;     /* vertical center */
-            background-color: black;
-        }
-
-        /* Optional: make video responsive */
-        video {
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ Site Seized</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 50px;
+    }
+    h1 {
+      color: red;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .warning {
+      border: 3px solid red;
+      padding: 20px;
+      display: inline-block;
+      max-width: 600px;
+      margin: auto;
+    }
+    .blink {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-    <video id="myVideo" controls autoplay muted>
-        <source src="video2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <script>
-        const video = document.getElementById('myVideo');
-        
-        // Try to play with audio if browser allows
-        video.muted = false;
-        video.play().catch(() => {
-            video.muted = false;
-            video.play();
-        });
-    </script>
+  <h1 class="blink">⚠️ THIS WEBSITE HAS BEEN SEIZED ⚠️</h1>
+  <div class="warning">
+    <p>This domain has been temporarily taken offline as part of an <strong>ongoing investigation</strong>.</p>
+    <p>Reason: Excessive Meme Activity Detected 🕵️‍♂️</p>
+    <p>Please contact the Site Owner to resolve this issue.</p>
+  </div>
+  <p style="margin-top: 30px; font-size: 0.8em;">(Just kidding. Your friend pranked you 😄)</p>
 </body>
 </html>
-
-

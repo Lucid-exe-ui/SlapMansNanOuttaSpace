@@ -3,26 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚠️ Site Seized</title>
+  <title>⚠️ Website Seized</title>
   <style>
     body {
       background-color: black;
       color: white;
+      font-family: "Arial Black", sans-serif;
       text-align: center;
-      font-family: Arial, sans-serif;
-      padding: 50px;
+      padding: 40px;
     }
-    h1 {
-      color: red;
-      font-size: 3em;
+    .banner {
+      background: red;
+      color: white;
+      font-size: 2em;
+      padding: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+    .seal {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, gold 40%, orange 100%);
+      border: 5px solid #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
       margin-bottom: 20px;
+      box-shadow: 0 0 30px gold;
     }
-    .warning {
+    .notice {
       border: 3px solid red;
       padding: 20px;
-      display: inline-block;
-      max-width: 600px;
-      margin: auto;
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,0,0,0.1);
+      box-shadow: 0 0 20px red;
+    }
+    .case {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #ff8080;
+      font-family: monospace;
     }
     .blink {
       animation: blink 1s infinite;
@@ -31,18 +57,32 @@
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
     }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
   </style>
 </head>
 <body>
-  <h1 class="blink">⚠️ THIS WEBSITE HAS BEEN SEIZED ⚠️</h1>
-  <div class="warning">
-    <p>This domain has been temporarily taken offline as part of an <strong>ongoing investigation</strong>.</p>
-    <p>Reason: Excessive Suspicious Activity Detected </p>
-    <p>This site will remain seized until it is resolved</p>
+  <div class="banner blink">⚠️ THIS WEBSITE HAS BEEN SEIZED ⚠️</div>
+
+  <div class="seal"></div>
+
+  <div class="notice">
+    <h1>Notice of Domain Seizure</h1>
+    <p>
+      This domain has been <strong>temporarily seized</strong> as part of a
+      operation conducted by the <em>Federal Bureau of Investigation</em> (FBI).
+    </p>
+    <p>
+      All activity has been suspended pending further investigation.
+    </p>
+    <div class="case">CASE #: 404-NOT-FOUND</div>
   </div>
-  <p style="margin-top: 30px; font-size: 0.8em;">Contact us for a claim at Seized@gov.uk</p>
+
+  <div class="footer">
+    <p>(This site will remain like this until it is either terminated or resolved)</p>
+  </div>
 </body>
 </html>
-
-
-

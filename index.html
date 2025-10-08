@@ -1,4 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>We'll be back soon — Maintenance</title>
+  <meta name="description" content="This site is temporarily offline for maintenance. We'll be back shortly." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+      --max-width:900px;
+      --radius:16px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
 
-      background-size: 
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1000px 400px at 10% 20%, rgba(96,165,250,0.06), transparent),
+                  linear-gradient(180deg, #071027 0%, var(--bg) 50%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:calc(var(--radius) + 4px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      padding:48px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:32px;
+      align-items:center;
+      backdrop-filter: blur(6px) saturate(120%);
+    }
 
+    .left{padding-right:8px}
+    .logo{display:inline-flex;gap:12px;align-items:center;margin-bottom:18px}
+    .logo svg{width:44px;height:44px}
+    h1{margin:0 0 12px 0;font-size:28px;line-height:1.05;color:#e6eef8}
+    p.lead{margin:0 0 18px 0;color:var(--muted);font-size:15px}
+
+    .status{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+    .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#3b82f6);box-shadow:0 4px 18px rgba(59,130,246,0.25);animation:pulse 1.8s infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:1}70%{transform:scale(1.7);opacity:0.35}100%{transform:scale(1);opacity:1}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));border-radius:12px;padding:18px;color:var(--muted);font-size:14px;box-shadow: 0 6px 18px rgba(2,6,23,0.55)}
+
+    .right{display:flex;flex-direction:column;gap:16px;align-items:stretch}
+
+    .countdown{display:flex;gap:8px;justify-content:space-between;align-items:center;font-variant-numeric: tabular-nums}
+    .countdown .part{flex:1 1 0;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px 10px;border-radius:10px;text-align:center}
+    .countdown .num{font-size:20px;color:#e6eef8;font-weight:600}
+    .countdown .label{font-size:11px;color:var(--muted);margin-top:6px}
+
+    .actions{display:flex;gap:8px;margin-top:8px}
+    .btn{border:0;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer;background:transparent;color:var(--accent);border:1px solid rgba(96,165,250,0.12);backdrop-filter: blur(4px)}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#3b82f6);color:#071027;border:0}
+
+    .meta{font-size:13px;color:var(--muted);margin-top:14px}
+    footer.small{font-size:12px;color:var(--muted);margin-top:16px}
+
+    @media (max-width:880px){.container{grid-template-columns:1fr;padding:28px}.right{order:-1}}
+    :focus{outline:3px solid rgba(96,165,250,0.18);outline-offset:3px}
+
+    .clouds{position:absolute;left:0;right:0;top:6%;height:140px;pointer-events:none}
+    .cloud{position:absolute;width:180px;opacity:0.06;filter:blur(6px);transform:translateY(0)}
+    .cloud.c1{left:-10%;animation:move 40s linear infinite}
+    .cloud.c2{left:40%;top:28px;animation:move 60s linear infinite}
+    @keyframes move{0%{transform:translateX(-8vw)}100%{transform:translateX(120vw)}}
+  </style>
+</head>
+<body>
+  <div class="clouds" aria-hidden="true">
+    <svg class="cloud c1" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><g fill="#9fbff5"><ellipse cx="50" cy="30" rx="50" ry="22"/><ellipse cx="90" cy="28" rx="38" ry="20"/><ellipse cx="130" cy="30" rx="40" ry="22"/></g></svg>
+    <svg class="cloud c2" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><g fill="#9fbff5"><ellipse cx="60" cy="34" rx="60" ry="24"/><ellipse cx="110" cy="30" rx="48" ry="20"/></g></svg>
+  </div>
+
+  <main class="container" role="main" aria-labelledby="maint-heading">
+    <section class="left">
+      <div class="logo" aria-hidden="false">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#0b1220"/>
+          <path d="M12 28c6-8 18-8 24 0" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="18" cy="20" r="3" fill="#60a5fa"/>
+        </svg>
+        <div>
+          <strong style="color:#e6eef8">Acme Co.</strong>
+          <div style="font-size:12px;color:var(--muted)">Scheduled maintenance</div>
+        </div>
+      </div>
+
+      <h1 id="maint-heading">We'll be back shortly</h1>
+      <p class="lead">We're performing some important maintenance and improvements. The site is currently offline but will be back soon. Thanks for your patience — we appreciate it.</p>
+
+      <div class="status" role="status" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <div style="font-weight:600;color:#e6eef8">Maintenance in progress</div>
+          <div style="font-size:13px;color:var(--muted)">Started: <time datetime="2025-10-08">October 8, 2025</time></div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="What we're doing">
+        <strong style="color:#e6eef8">What we're doing</strong>
+        <p style="margin:8px 0 0 0">We are working on some security updates.</p>
+      </div>
+
+      <div class="meta">Need help? Email <a href="mailto:support@example.com">slapmansnaninfo@gmail.com</a> Emails may take up to a week to be read.</div>
+    </section>
+
+    <aside class="right" aria-label="Expected availability">
+      <div class="card" role="region" aria-labelledby="eta-title">
+        <div id="eta-title" style="font-weight:700;color:#e6eef8">Estimated time</div>
+        <div class="countdown" aria-hidden="false">
+          <div class="part"><div class="num" id="days">0</div><div class="label">Days</div></div>
+          <div class="part"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+          <div class="part"><div class="num" id="minutes">00</div><div class="label">Minutes</div></div>
+          <div class="part"><div class="num" id="seconds">00</div><div class="label">Seconds</div></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="refresh" aria-live="polite">Refresh status</button>
+          <button class="btn primary" id="notify">Notify me</button>
+        </div>
+        <div class="small" style="margin-top:12px">We'll try to bring the site back online at the time above. Times are approximate.</div>
+      </div>
+
+      <div class="card" role="region" aria-labelledby="subscribe-title">
+        <div id="subscribe-title" style="font-weight:700;color:#e6eef8">Get notified</div>
+        <form id="notify-form" onsubmit="return false" style="margin-top:12px;display:flex;gap:8px;">
+          <label for="email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e6eef8" />
+          <button class="btn primary" id="subscribe">Subscribe</button>
+        </form>
+        <div class="small" style="margin-top:10px">We won't spam you — just a single notification when we're back.</div>
+      </div>
+
+      <footer class="small">Status page: <a href="#">status.example.com</a></footer>
+    </aside>
+  </main>
+
+  <script>
+    (function(){
+      // Set target: 1 week (7 days) from now
+      const now = new Date();
+      const target = new Date(now.getTime() + 7*24*60*60*1000);
+
+      function upd(){
+        const t = Math.max(0, target - new Date());
+        const s = Math.floor(t/1000)%60;
+        const m = Math.floor(t/1000/60)%60;
+        const h = Math.floor(t/1000/60/60)%24;
+        const d = Math.floor(t/1000/60/60/24);
+        document.getElementById('days').textContent = d;
+        document.getElementById('hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+        document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+      }
+      upd();
+      const iv = setInterval(upd,1000);
+
+      document.getElementById('refresh').addEventListener('click',function(){
+        this.textContent = 'Checking...';
+        setTimeout(()=>{ this.textContent = 'Refresh status'; },900);
+      });
+
+      document.getElementById('notify').addEventListener('click', ()=>{
+        document.getElementById('email').focus();
+      });
+
+      document.getElementById('subscribe').addEventListener('click', (e)=>{
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        if(!email) return alert('Please enter your email');
+        alert('Thanks — we\'ll notify you at ' + email + ' when we are back.');
+      });
+
+      const statusEl = document.querySelector('.status');
+      const announce = setInterval(()=>{
+        if(document.getElementById('days').textContent === '0' &&
+           document.getElementById('hours').textContent === '00' &&
+           document.getElementById('minutes').textContent === '00' &&
+           document.getElementById('seconds').textContent === '00'){
+          statusEl.setAttribute('aria-live','assertive');
+          statusEl.querySelector('div > div').textContent = 'We should be back now — please refresh.';
+          clearInterval(announce);
+        }
+      },1000);
+
+    })();
+  </script>
+</body>
+</html>

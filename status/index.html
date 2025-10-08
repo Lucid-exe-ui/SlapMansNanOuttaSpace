@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Status — slapmansnanoutta.space</title>
+  <meta name="description" content="Live status page for slapmansnanoutta.space." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#60a5fa;
+      --error:#ef4444;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1000px 400px at 10% 20%, rgba(96,165,250,0.06), transparent),
+                  linear-gradient(180deg, #071027 0%, var(--bg) 50%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    main{
+      width:100%;
+      max-width:600px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      padding:48px;
+      text-align:center;
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+
+    .logo{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    .logo svg{width:40px;height:40px}
+
+    h1{color:#e6eef8;font-size:26px;margin-bottom:12px}
+    p{color:var(--muted);font-size:15px;margin-bottom:20px}
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), var(--glass));
+      box-shadow: 0 4px 14px rgba(2,6,23,0.6);
+    }
+
+    .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--error);
+      box-shadow:0 0 20px rgba(239,68,68,0.5);
+      animation:blink 1.6s infinite;
+    }
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+    .label{font-size:16px;color:#e6eef8;font-weight:600}
+
+    footer{margin-top:28px;font-size:13px;color:var(--muted)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#0b1220"/>
+        <path d="M12 28c6-8 18-8 24 0" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="20" r="3" fill="#60a5fa"/>
+      </svg>
+      <div>
+        <strong style="color:#e6eef8">slapmansnanoutta.space</strong>
+      </div>
+    </div>
+
+    <h1>Current Website Status</h1>
+    <p>We monitor the availability and performance of our website in real time.</p>
+
+    <div class="status" role="status">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="label">Website is currently DOWN</span>
+    </div>
+
+    <footer>
+      Last checked: <time datetime="2025-10-08T12:00:00Z">October 8, 2025</time><br />
+      Visit our <a href="mailto:support@slapmansnanoutta.space">support</a> for updates.
+    </footer>
+  </main>
+</body>
+</html>
